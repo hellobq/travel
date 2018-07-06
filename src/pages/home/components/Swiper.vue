@@ -12,8 +12,6 @@
 <script>
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
-import 'swiper/dist/css/swiper.css'
-
 export default {
   name: 'home-swiper',
   data () {
@@ -63,4 +61,7 @@ export default {
     bottom: 4px;
   .swiper-pagination >>> span.swiper-pagination-bullet-active
       background: #fff
+  .swiper-pagination >>>  .swiper-pagination-bullet
+      width: 6px
+      height: 6px
 </style>

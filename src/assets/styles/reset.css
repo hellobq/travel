@@ -21,3 +21,8 @@ sup,sub{vertical-align:baseline}
 html {overflow-x: hidden;overflow-y:scroll;height: 100%;}
 body {font: .28rem Arial, "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;}
 a {text-decoration: none;}
+@media screen and (min-width: 600px) {
+  body, .home-header {
+    font-size: 16px !important
+  }
+}

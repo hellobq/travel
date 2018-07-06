@@ -5,6 +5,7 @@ import router from './router'
 import '@/assets/styles/reset.css'
 import '@/assets/styles/border.css'
 import '@/assets/styles/iconfont.css'
+import 'swiper/dist/css/swiper.css'
 
 import fastClick from 'fastclick'
 
