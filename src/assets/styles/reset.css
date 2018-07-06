@@ -19,5 +19,5 @@ input,textarea,button,select,a{outline:0 none;border: none;}
 button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}
 sup,sub{vertical-align:baseline}
 html {overflow-x: hidden;overflow-y:scroll;height: 100%;}
-body {font-family: Arial, "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;}
+body {font: .28rem Arial, "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;}
 a {text-decoration: none;}
