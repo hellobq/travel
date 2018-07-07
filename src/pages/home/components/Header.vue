@@ -8,7 +8,7 @@
       输入城市/景点/游玩主题
     </div>
     <div class="header-right-area">
-      湘潭
+      上海
       <span class="iconfont">&#xe631;</span>
     </div>
   </div>
