@@ -13,7 +13,7 @@
           <img :src="item.imgUrl" :alt="item.title">
           <p>{{item.title}}</p>
           <p><em>￥{{item.price}}</em> 起</p>
-          <div class="top-num">
+          <div v-if="item.topUrl" class="top-num">
             <img :src="item.topUrl">
           </div>
         </swiper-slide>
