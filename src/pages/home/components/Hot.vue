@@ -8,16 +8,16 @@
         </div>
       </div>
 
-      <swiper :options="swiperOption">
+      <swiper :options="swiperOption" ref="mySwiper" >
         <swiper-slide v-for="item of swiperData" :key="item.id">
           <img :src="item.imgUrl" :alt="item.title">
           <p>{{item.title}}</p>
           <p><em>￥{{item.price}}</em> 起</p>
           <div v-if="item.topUrl" class="top-num">
-            <img :src="item.topUrl">
+            <img v-lazy="item.topUrl">
           </div>
         </swiper-slide>
-        <div class="swiper-scrollbar" slot="scrollbar"></div>
+        <div ref="scrollbar" class="swiper-scrollbar" slot="scrollbar"></div>
       </swiper>
     </div>
   </div>
@@ -37,6 +37,9 @@ export default {
         scrollbar: {
           el: '.swiper-scrollbar',
           draggable: true
+        },
+        onSlideChange: () => {
+          console.log('hahaha!')
         }
       },
       swiperData: [{
@@ -95,6 +98,20 @@ export default {
       }]
     }
   },
+  mounted () {
+    this.swiper
+      .on('touchMove', e => {
+        this.$refs.scrollbar.style.opacity = 1
+      })
+      .on('touchEnd', e => {
+        this.$refs.scrollbar.style.opacity = 0
+      })
+  },
+  computed: {
+    swiper () {
+      return this.$refs.mySwiper.swiper
+    }
+  },
   components: { swiper, swiperSlide }
 }
 </script>
@@ -108,20 +125,20 @@ export default {
   background: #f5f5f5
   .bg
     background: #fff
+    padding: 0 .2rem
     .hot-title
       padding: .2rem 0
       font-size: .32rem
       line-height: .6rem
-      background: url('~@/assets/img/hot.png') no-repeat center left .2rem / .32rem auto
+      background: url('~@/assets/img/hot.png') no-repeat center left / .32rem auto
       h3
         float: left
-        padding-left: .6rem
+        padding-left: .4rem
         color: $textColor
       .all-hot
         float: right
         color: #616161
         span
-          margin-right: .2rem
           font-size: .28rem
     .swiper-slide
       padding: .2rem 0 .4rem
@@ -144,4 +161,6 @@ export default {
         height: .4rem
     .swiper-scrollbar
       height: 2px
+      opacity: 0
+      transition: opacity .3s
 </style>
