@@ -13,6 +13,9 @@
           <img :src="item.imgUrl" :alt="item.title">
           <p>{{item.title}}</p>
           <p><em>￥{{item.price}}</em> 起</p>
+          <div class="top-num">
+            <img :src="item.topUrl">
+          </div>
         </swiper-slide>
         <div class="swiper-scrollbar" slot="scrollbar"></div>
       </swiper>
@@ -39,16 +42,19 @@ export default {
       swiperData: [{
         id: '001',
         imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_150x150_8156d2ff.jpg',
+        topUrl: 'http://img1.qunarzz.com/piao/fusion/1710/ab/159673b63e6ca702.png',
         title: '上海迪士尼乐园',
         price: '69'
       }, {
         id: '002',
         imgUrl: 'http://img1.qunarzz.com/tuan/team2/1507/2c/83e0e0e7ae082a.jpg_150x150_90f7eeef.jpg',
+        topUrl: 'http://img1.qunarzz.com/piao/fusion/1710/2d/36d0c4adaebbbc02.png',
         title: '东方明珠',
         price: '128'
       }, {
         id: '003',
         imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/1a/1aac2b1dd96b36ba3.water.jpg_150x150_edd4b21c.jpg',
+        topUrl: 'http://img1.qunarzz.com/piao/fusion/1710/67/edc47ffef9e96b02.png',
         title: '上海欢乐谷',
         price: '95.1'
       }, {
@@ -118,7 +124,7 @@ export default {
           margin-right: .2rem
           font-size: .28rem
     .swiper-slide
-      padding-bottom: .4rem
+      padding: .2rem 0 .4rem
       img
         width: 100%
       p
@@ -130,6 +136,12 @@ export default {
           margin: .08rem 0
         em
           color: #ff8300
+      .top-num
+        position: absolute
+        top: .12rem
+        left: 0
+        width: .84rem
+        height: .4rem
     .swiper-scrollbar
       height: 2px
 </style>
