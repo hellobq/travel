@@ -89,7 +89,7 @@ export default {
 
 .home-icons
   .swiper-container
-    padding-bottom: .4rem
+    padding-bottom: .8rem
     .swiper-slide ul
       display: flex
       flex-wrap: wrap
@@ -105,8 +105,6 @@ export default {
             width: 60%
         p
           setEllipsis()
-    .swiper-pagination
-      bottom: -0.04rem
     .swiper-pagination >>>  .swiper-pagination-bullet
         width: 6px
         height: 6px

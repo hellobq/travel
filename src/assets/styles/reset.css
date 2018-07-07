@@ -26,3 +26,4 @@ a {text-decoration: none;}
     font-size: 16px !important
   }
 }
+.clearfix::after { content: ''; display: block; clear: both; zoom: 1; }
