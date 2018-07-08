@@ -26,7 +26,7 @@ export default {
 .home-header
   display: flex
   height: .88rem
-  background: #00bcd4
+  background: $themeColor
   line-height: .88rem
   color: #fff
   font-size: .28rem

@@ -94,9 +94,9 @@ export default {
   padding: .2rem 0
   font-size: .32rem
   line-height: .6rem
-  background: url('~@/assets/img/love.png') no-repeat center left / .32rem auto
+  background: url('~@/assets/img/love.png') no-repeat center left .2rem / .32rem auto
   h3
-    padding-left: .4rem
+    padding-left: .6rem
     color: $textColor
 
 // list
@@ -145,7 +145,7 @@ export default {
 // all-products
 .all-products
   padding: .2rem 0
-  color: $bgColor
+  color: $themeColor
   text-align: center
   border-top: 1px solid #e0e0e0
 </style>
