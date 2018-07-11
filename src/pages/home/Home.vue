@@ -6,6 +6,7 @@
     <home-hot :hot-data="hotList"></home-hot>
     <home-love :love-data="loveList"></home-love>
     <home-weekend :weekend-data="weekendList"></home-weekend>
+    <home-footer></home-footer>
   </div>
 </template>
 
@@ -16,11 +17,12 @@ import HomeIcons from './components/Icons'
 import HomeHot from './components/Hot'
 import HomeLove from './components/Love'
 import HomeWeekend from './components/Weekend'
+import HomeFooter from './components/Footer'
 import axios from 'axios'
 
 export default {
   name: 'Home',
-  components: { HomeHeader, HomeSwiper, HomeIcons, HomeHot, HomeLove, HomeWeekend },
+  components: { HomeHeader, HomeSwiper, HomeIcons, HomeHot, HomeLove, HomeWeekend, HomeFooter },
   created () {
     this.getData()
   },
@@ -34,7 +36,7 @@ export default {
     }
   },
   methods: {
-    getData () {
+    getData () {  
       axios({
         method: 'get',
         url: 'http://localhost:8080/static/mock/index.json'
