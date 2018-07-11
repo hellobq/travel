@@ -8,7 +8,7 @@
     <!-- list -->
     <div class="love-list">
       <ul>
-        <li v-for="item of imgData" :key="item.id">
+        <li v-for="item of loveData" :key="item.id">
           <div class="left-box">
             <img :src="item.imgUrl" :alt="item.title">
           </div>
@@ -32,54 +32,10 @@
 <script>
 export default {
   name: 'home-love',
-  data () {
-    return {
-      imgData: [{
-        id: '001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1506/30/7a528fae12c17e6e29d5d13a9d9813ee.water.jpg_200x200_e7f0d0ad.jpg',
-        title: '上海玛雅海滩水公园',
-        price: '140',
-        playArea: '佘山国家旅游度假区'
-      }, {
-        id: '002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg',
-        title: '上海迪士尼乐园',
-        price: '69',
-        playArea: '浦东新区'
-      }, {
-        id: '003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1412/9f/fbff2a5302c0ce906ef9b64159730f89.water.jpg_200x200_87806940.jpg',
-        title: '上海海洋水族馆',
-        price: '103',
-        playArea: '浦东新区'
-      }, {
-        id: '004',
-        imgUrl: 'http://img1.qunarzz.com/tuan/team2/1507/2c/83e0e0e7ae082a.jpg_200x200_6d7378b2.jpg',
-        title: '东方明珠',
-        price: '128',
-        playArea: '浦东新区',
-        ad: '感受云端漫步，品味老上海风情'
-      }, {
-        id: '005',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/17/170481fb9caf500790.water.jpg_200x200_a32b9a92.jpg',
-        title: '上海野生动物园',
-        price: '62.9',
-        playArea: '浦东新区'
-      }, {
-        id: '006',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/1a/1aac2b1dd96b36ba3.water.jpg_200x200_8148509f.jpg',
-        title: '上海欢乐谷',
-        price: '95.1',
-        playArea: '松江区',
-        ad: '游乐项目惊险刺激，特色表演异彩纷呈'
-      }, {
-        id: '007',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1704/c9/c936f3fccfc6d7eda3.img.jpg_200x200_46052773.jpg',
-        title: '上海杜莎夫人蜡像馆',
-        price: '130',
-        playArea: '黄浦区',
-        ad: '上海本月收藏Top5╰(￣▽￣)╭'
-      }]
+  props: {
+    loveData: {
+      type: Array,
+      required: true
     }
   }
 }

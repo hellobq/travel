@@ -14,27 +14,14 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'home-swiper',
+  props: {
+    swiperData: {
+      type: Array,
+      required: true
+    }
+  },
   data () {
     return {
-      swiperData: [{
-        id: '001',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1807/6a/18f9b171a9275c02.jpg_750x200_97cd5547.jpg'
-      }, {
-        id: '002',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1807/66/e5a5cec881702f02.jpg_750x200_67bb5691.jpg'
-      }, {
-        id: '003',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1805/3b/ef86879aa50e3002.jpg_750x200_2a108508.jpg'
-      }, {
-        id: '004',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/eb/f3d2fa5308fd5f02.jpg_750x200_38b8d6f7.jpg'
-      }, {
-        id: '005',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1706/b9/6b91b49794f46402.jpg_750x200_d7f254e2.jpg'
-      }, {
-        id: '006',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1706/b8/a8e8ff02b094c802.jpg_750x200_ddaec8e5.jpg'
-      }],
       swiperOption: {
         autoplay: {
           delay: 3000
