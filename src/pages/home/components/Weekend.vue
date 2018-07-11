@@ -38,6 +38,7 @@ export default {
     padding: .2rem
   .home-weekend-list
     li
+      max-heigt: 3rem
       padding-bottom: .2rem
       p
         padding: .12rem .2rem

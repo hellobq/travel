@@ -18,13 +18,32 @@ import HomeHot from './components/Hot'
 import HomeLove from './components/Love'
 import HomeWeekend from './components/Weekend'
 import HomeFooter from './components/Footer'
+
 import axios from 'axios'
 
 export default {
   name: 'Home',
   components: { HomeHeader, HomeSwiper, HomeIcons, HomeHot, HomeLove, HomeWeekend, HomeFooter },
   created () {
-    this.getData()
+    axios({
+      method: 'get',
+      url: '/api/index.json',
+      params: {
+        city: '上海'
+      }
+    })
+      .then(req => {
+        console.log(req)
+        const mydata = req.data.data
+        this.swiperList = mydata.swiperList
+        this.iconList = mydata.iconList
+        this.hotList = mydata.HotList
+        this.loveList = mydata.LoveList
+        this.weekendList = mydata.weekendList
+      })
+      .catch(err => {
+        console.log(err)
+      })
   },
   data () {
     return {
@@ -34,30 +53,6 @@ export default {
       loveList: [],
       weekendList: []
     }
-  },
-  methods: {
-    getData () {  
-      axios({
-        method: 'get',
-        url: 'http://localhost:8080/static/mock/index.json'
-      })
-        .then(req => {
-          console.log(req)
-          this.swiperList = req.data.data.swiperList
-          this.iconList = req.data.data.iconList
-          this.hotList = req.data.data.HotList
-          this.loveList = req.data.data.LoveList
-          this.weekendList = req.data.data.weekendList
-          console.log(this.$data)
-        })
-        .catch(err => {
-          console.log('出错啦' + err)
-        })
-    }
   }
 }
 </script>
-
-<style scoped lang="stylus">
-
-</style>

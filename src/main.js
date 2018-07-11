@@ -10,7 +10,10 @@ import 'swiper/dist/css/swiper.css'
 import fastClick from 'fastclick'
 import VueLazyload from 'vue-lazyload'
 
-Vue.use(VueLazyload)
+Vue.use(VueLazyload, {
+  preLoad: 1.0,
+  listenEvents: ['scroll']
+})
 Vue.config.productionTip = false
 fastClick.attach(document.body)
 
