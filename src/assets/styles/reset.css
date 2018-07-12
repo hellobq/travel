@@ -20,5 +20,5 @@ button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}
 sup,sub{vertical-align:baseline}
 html {overflow-x: hidden;overflow-y:scroll;height: 100%;}
 body {font: .28rem Arial, "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;}
-a {text-decoration: none;}
+a {text-decoration: none; color: inherit}
 .clearfix::after { content: ''; display: block; clear: both; zoom: 1; }
