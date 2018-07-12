@@ -2,17 +2,19 @@
   <div class="city">
     <city-search></city-search>
     <city-list :hot-city="hotCities" :all-city="cities"></city-list>
+    <city-bar :all-city="cities"></city-bar>
   </div>
 </template>
 
 <script>
 import CitySearch from './components/Search'
 import CityList from './components/List'
+import CityBar from './components/Bar'
 import axios from 'axios'
 
 export default {
   name: 'city',
-  components: { CitySearch, CityList },
+  components: { CitySearch, CityList, CityBar },
   data () {
     return {
       hotCities: [],
@@ -26,7 +28,6 @@ export default {
     })
       .then(req => {
         const cityData = req.data.data
-        console.log(cityData)
         this.cities = cityData.cities
         this.hotCities = cityData.hotCities
       })
