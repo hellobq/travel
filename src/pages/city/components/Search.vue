@@ -41,8 +41,10 @@ export default {
       font-size: .56rem
   .city-input
     input
+      box-sizing: border-box
       width: 100%
       height: .6rem
+      padding: 0 .1rem
       text-align: center
       border-radius: .04rem
       font: .26rem 'Microsoft yahei'

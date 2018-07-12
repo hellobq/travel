@@ -25,6 +25,14 @@
       "id": 125,
       "spell": "guilin",
       "name": "桂林"
+    }, {
+      "id": 126,
+      "spell": "chengdu",
+      "name": "成都"
+    }, {
+      "id": 127,
+      "spell": "xianggang",
+      "name": "香港"
     }],
     "cities": {
       "A": [{
