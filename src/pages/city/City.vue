@@ -1,8 +1,8 @@
 <template>
   <div class="city">
     <city-search></city-search>
-    <city-list :hot-city="hotCities" :all-city="cities"></city-list>
-    <city-bar :all-city="cities"></city-bar>
+    <city-list :hot-city="hotCities" :all-city="cities" :char="oneChar"></city-list>
+    <city-bar :all-city="cities" @char="getOneChar"></city-bar>
   </div>
 </template>
 
@@ -18,7 +18,13 @@ export default {
   data () {
     return {
       hotCities: [],
-      cities: {}
+      cities: {},
+      oneChar: ''
+    }
+  },
+  methods: {
+    getOneChar (ch) {
+      this.oneChar = ch
     }
   },
   created () {

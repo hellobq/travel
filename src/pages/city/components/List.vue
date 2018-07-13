@@ -17,7 +17,13 @@
           <h3>热门城市</h3>
           <div class="list">
             <ul>
-              <li v-for="item of hotCity" :key="item.id">{{item.name}}</li>
+              <li
+                v-for="item of hotCity"
+                :key="item.id"
+                @click="changeCurrentCity"
+              >
+                {{item.name}}
+              </li>
             </ul>
           </div>
         </div>
@@ -28,11 +34,12 @@
             v-for="(itemObj, key) of allCity"
             :key="key"
           >
-            <h3>{{key}}</h3>
+            <h3 :ref="key">{{key}}</h3>
             <ul>
               <li
                 v-for="item of itemObj"
                 :key="item.id"
+                @click="changeCurrentCity"
               >
                 {{item.name}}
               </li>
@@ -57,11 +64,29 @@ export default {
     allCity: {
       type: Object,
       required: true
+    },
+    char: {
+      type: String,
+      required: true
+    }
+  },
+  data () {
+    return {
+      currentCity: '上海'
+    }
+  },
+  methods: {
+    changeCurrentCity (e) {
+      this.currentCity = e.target.innerText
     }
   },
   mounted () {
-    this.scroll = new BScroll(this.$refs.wrapper)
-    // , {click: true}
+    this.scroll = new BScroll(this.$refs.wrapper, {click: true})
+  },
+  watch: {
+    char (val) {
+      if (val) this.scroll.scrollToElement(this.$refs[val][0])
+    }
   }
 }
 </script>
