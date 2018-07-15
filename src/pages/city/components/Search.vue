@@ -10,14 +10,61 @@
       <input
         type="text"
         placeholder="输入城市名或拼音"
+        v-model="keyword"
       >
+    </div>
+
+    <!-- search-result -->
+    <div class="search-result" v-show="keyword" ref="wrapper">
+      <ul>
+        <li v-for="(item, index) of resData" :key="index">{{item}}</li>
+        <li v-show="hasResData">未找到相关地点</li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
+import BScroll from 'better-scroll'
+
 export default {
-  name: 'city-search'
+  name: 'city-search',
+  props: {
+    allCity: {
+      type: Object,
+      required: true
+    }
+  },
+  data () {
+    return {
+      keyword: '',
+      resData: [],
+      timer: null
+    }
+  },
+  watch: {
+    keyword (val) {
+      if (val) {
+        this.timer && clearTimeout(this.timer)
+        this.timer = setTimeout(() => {
+          if (this.resData.length) this.resData = []
+          for (let k in this.allCity) {
+            this.allCity[k].forEach(obj => {
+              (obj.name.indexOf(val) !== -1 || obj.spell.indexOf(val) !== -1) && this.resData.push(obj.name)
+            })
+          }
+        }, 100)
+      }
+    }
+  },
+  computed: {
+    hasResData () {
+      return !this.resData.length
+    }
+  },
+  mounted () {
+    this.scroll = new BScroll(this.$refs.wrapper)
+  }
 }
 </script>
 
@@ -25,7 +72,6 @@ export default {
 @import '~@/assets/styles/various.styl'
 
 .city-search
-  position: relative
   padding: .08rem
   background: $themeColor
   text-align: center
@@ -48,5 +94,19 @@ export default {
       text-align: center
       border-radius: .04rem
       font: .26rem 'Microsoft yahei'
-
+  .search-result
+    overflow: hidden
+    z-index: 22
+    position: absolute
+    top: 1.42rem
+    left: 0
+    right: 0
+    bottom: 0
+    background: #f2f2f2
+    li
+      padding-left: .2rem
+      text-align: left
+      line-height: .6rem
+      border-bottom: .02rem solid #ddd
+      background: #fff
 </style>

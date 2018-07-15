@@ -1,6 +1,6 @@
 <template>
   <div class="city">
-    <city-search></city-search>
+    <city-search :all-city="cities"></city-search>
     <city-list :hot-city="hotCities" :all-city="cities" :char="oneChar"></city-list>
     <city-bar :all-city="cities" @char="getOneChar"></city-bar>
   </div>

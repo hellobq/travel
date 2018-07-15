@@ -70,7 +70,7 @@ export default {
 
 .scroll-bar
   position: absolute
-  z-index: 999
+  z-index: 11
   right: .08rem
   top: 0
   padding-top: 3rem

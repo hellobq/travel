@@ -96,7 +96,7 @@ export default {
 
 .city-outer-box
   position: absolute
-  top: 1.4rem
+  top: 1.42rem
   left: 0
   right: 0
   bottom: 0
