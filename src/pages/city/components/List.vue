@@ -7,7 +7,7 @@
           <h3>当前城市</h3>
           <div class="list">
             <ul>
-              <li>上海</li>
+              <li>{{ $store.state.city }}</li>
             </ul>
           </div>
         </div>
