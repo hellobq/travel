@@ -55,7 +55,8 @@ export default {
       vertical-align: top
   .header-right-area
     float: right
-    width: 1.28rem
+    padding-left: .1rem
+    min-width: 1.28rem
     height: 100%
     text-align: center
     span

@@ -70,18 +70,15 @@ export default {
       required: true
     }
   },
-  data () {
-    return {
-      currentCity: '上海'
-    }
-  },
   methods: {
     changeCurrentCity (e) {
-      this.currentCity = e.target.innerText
+      this.$store.dispatch('changeCity', e.target.innerText)
+      this.$router.push('/')
     }
   },
   mounted () {
     this.scroll = new BScroll(this.$refs.wrapper, {click: true})
+    console.log(this)
   },
   watch: {
     char (val) {
