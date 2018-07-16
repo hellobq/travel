@@ -8,7 +8,12 @@
     <!-- list -->
     <div class="love-list">
       <ul>
-        <li v-for="item of loveData" :key="item.id">
+        <router-link
+          tag="li"
+          v-for="item of loveData"
+          :key="item.id"
+          :to="{ name: 'Detail', params: {area_id: item.title} }"
+        >
           <div class="left-box">
             <img :src="item.imgUrl" :alt="item.title">
           </div>
@@ -20,7 +25,7 @@
             </div>
             <div v-if="item.ad" class="ad">{{item.ad}}</div>
           </div>
-        </li>
+        </router-link>
       </ul>
     </div>
 
