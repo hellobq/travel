@@ -17,7 +17,13 @@
     <!-- search-result -->
     <div class="search-result" v-show="keyword" ref="wrapper">
       <ul>
-        <li v-for="(item, index) of resData" :key="index">{{item}}</li>
+        <li
+          v-for="(item, index) of resData"
+          :key="index"
+          @click="changeCurrentCity"
+        >
+          {{item}}
+        </li>
         <li v-show="hasResData">未找到相关地点</li>
       </ul>
     </div>
@@ -40,6 +46,14 @@ export default {
       keyword: '',
       resData: [],
       timer: null
+    }
+  },
+  methods: {
+    changeCurrentCity (e) {
+      this.$store.dispatch('changeCity', e.target.innerText)
+      this.$router.push('/')
+      this.resData = []
+      this.keyword = ''
     }
   },
   watch: {
