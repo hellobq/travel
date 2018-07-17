@@ -32,9 +32,6 @@ export default {
       }
     }
   },
-  mounted () {
-    console.log(this.listData)
-  },
   components: { swiper, swiperSlide }
 }
 </script>

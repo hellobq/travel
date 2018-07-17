@@ -37,6 +37,7 @@ export default {
   },
   methods: {
     getFlag (bool) {
+      console.log(bool)
       this.flag = bool
     }
   },

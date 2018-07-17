@@ -7,13 +7,13 @@
     >
 
     <div class="bg-box">
-      <router-link
-        to="/"
+      <div
+        @click.stop="toHome"
         tag="div"
         class="back-to-home"
       >
         <span class="iconfont">&#xe603;</span>
-      </router-link>
+      </div>
 
       <div class="num-desc">
         <div class="pic-num">
@@ -58,6 +58,9 @@ export default {
   methods: {
     changeFlag () {
       this.$emit('reciveFlag', true)
+    },
+    toHome () {
+      this.$router.push('/')
     }
   }
 }
