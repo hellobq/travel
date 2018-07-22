@@ -1,12 +1,6 @@
 <template>
   <div class="detail-header" @click="changeFlag">
-    <img
-      width="100%"
-      src="http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_600x330_8572a930.jpg"
-      alt="上海迪士尼乐园"
-    >
-
-    <div class="bg-box">
+    <div class="top-box">
       <div
         @click.stop="toHome"
         tag="div"
@@ -14,6 +8,12 @@
       >
         <span class="iconfont">&#xe603;</span>
       </div>
+
+      <img
+        width="100%"
+        src="http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_600x330_8572a930.jpg"
+        alt="上海迪士尼乐园"
+      >
 
       <div class="num-desc">
         <div class="pic-num">
@@ -23,6 +23,14 @@
         <div class="area-name">上海迪士尼乐园</div>
       </div>
     </div>
+
+    <!-- fix-header-box -->
+    <div class="fix-header" :style="{opacity}">
+      <div @click.stop="toHome" tag="div" >
+        <span class="iconfont">&#xe603;</span>
+      </div>
+      <h3>{{$route.params.area_id}}</h3>
+    </div>
   </div>
 </template>
 
@@ -31,6 +39,7 @@ export default {
   name: 'detail-header',
   data () {
     return {
+      opacity: 0,
       listData: [{
         id: '001',
         imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_600x330_8572a930.jpg'
@@ -52,8 +61,12 @@ export default {
       }]
     }
   },
-  mounted () {
-    console.log(this.$route.params)
+  activated () {
+    document.body.scrollTop = document.documentElement.scrollTop = 0
+    window.addEventListener('scroll', this.handleScroll, false)
+  },
+  deactivated () {
+    window.removeEventListener('scroll', this.handleScroll, false)
   },
   methods: {
     changeFlag () {
@@ -61,34 +74,24 @@ export default {
     },
     toHome () {
       this.$router.push('/')
+    },
+    handleScroll () {
+      console.log(1)
+      const sTop = document.body.scrollTop || document.documentElement.scrollTop
+      this.opacity = sTop < 50 ? 0 : (sTop >= 50 && sTop <= 140 ? sTop / 140 : 1)
     }
   }
 }
 </script>
 
 <style scoped lang="stylus">
+@import '~@/assets/styles/various.styl'
+
 .detail-header
-  position: relative
-  .back-to-home
-    position: absolute
-    top: .1rem
-    left: .1rem
-    width: .72rem
-    height: .72rem
-    line-height: .72rem
-    background: rgba(0,0,0,.5)
-    border-radius: 50%
-    text-align: center
-    span
-      margin-left: -.06rem
-      font-size: .54rem
-      color: #fff
-  .bg-box
-    position: absolute
+  .top-box
+    position: relative
     top: 0
     left: 0
-    width: 100%
-    height: 100%
     background: linear-gradient(top, rgba(0,0,0,0) 90%, rgba(0,0,0,.8))
     .num-desc
       position: absolute
@@ -108,4 +111,39 @@ export default {
         margin-top: .12rem
         color: #fff
         font-size: .36rem
+    .back-to-home
+      position: absolute
+      top: .1rem
+      left: .1rem
+      width: .72rem
+      height: .72rem
+      line-height: .72rem
+      background: rgba(0,0,0,.5)
+      border-radius: 50%
+      text-align: center
+      span
+        margin-left: -.06rem
+        font-size: .54rem
+        color: #fff
+  .fix-header
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: .88rem
+    font-size: .32rem
+    text-align: center
+    background: #fff
+    color: #fff
+    &>div
+      position: absolute
+      left: .1rem
+      top: .1rem
+      span
+        display: block
+        font-size: .56rem
+    h3
+      width: 100%
+      line-height: .88rem
+      background: $themeColor
 </style>

@@ -2,12 +2,14 @@
   <div class="detail">
     <detail-header @reciveFlag="getFlag"></detail-header>
     <detail-banner @click.native="getFlag(false)" v-show="flag" :listData="listData"></detail-banner>
+    <detail-ticket :ticketList="ticketList"></detail-ticket>
   </div>
 </template>
 
 <script>
 import DetailHeader from './components/Header'
 import DetailBanner from './components/Banner'
+import DetailTicket from './components/Ticket'
 
 export default {
   name: 'detail',
@@ -32,6 +34,23 @@ export default {
       }, {
         id: '006',
         imgUrl: 'http://img1.qunarzz.com/sight/p0/1711/d9/d9119bcadf6045f5a3.img.jpg_350x240_95ba8b32.jpg'
+      }],
+      ticketList: [{
+        title: '成人票',
+        children: [{
+          title: '成人三馆联票',
+          children: [{
+            title: '成人三馆联票 - 某一连锁店销售'
+          }]
+        }, {
+          title: '成人五馆联票'
+        }]
+      }, {
+        title: '学生票'
+      }, {
+        title: '儿童票'
+      }, {
+        title: '特惠票'
       }]
     }
   },
@@ -41,10 +60,11 @@ export default {
       this.flag = bool
     }
   },
-  components: { DetailHeader, DetailBanner }
+  components: { DetailHeader, DetailBanner, DetailTicket }
 }
 </script>
 
 <style scoped lang="stylus">
-
+.detail
+  height: 20rem
 </style>
