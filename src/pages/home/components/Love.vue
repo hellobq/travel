@@ -12,7 +12,7 @@
           tag="li"
           v-for="item of loveData"
           :key="item.id"
-          :to="{ name: 'Detail', params: {area_id: item.title} }"
+          :to="{ name: 'Detail', params: {area_title: item.title} }"
         >
           <div class="left-box">
             <img :src="item.imgUrl" :alt="item.title">

@@ -10,6 +10,6 @@ export default new Router({
   routes: [
     { path: '/', name: 'Home', component: Home },
     { path: '/city', name: 'City', component: City },
-    { path: '/detail/:area_id', name: 'Detail', component: Detail }
+    { path: '/detail/:area_title', name: 'Detail', component: Detail }
   ]
 })

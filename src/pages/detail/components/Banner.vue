@@ -38,6 +38,7 @@ export default {
 
 <style scoped lang="stylus">
 .detail-banner
+  z-index: 999
   position: absolute
   top: 0
   left: 0

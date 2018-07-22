@@ -29,11 +29,10 @@ export default {
       method: 'get',
       url: '/api/index.json',
       params: {
-        city: '上海'
+        city: '上海' // 初始化应该是已定位的城市旅游资源
       }
     })
       .then(req => {
-        console.log(req)
         const mydata = req.data.data
         this.swiperList = mydata.swiperList
         this.iconList = mydata.iconList

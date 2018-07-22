@@ -20,9 +20,6 @@ export default {
       type: Array,
       required: true
     }
-  },
-  created () {
-    console.log(this.ticketList)
   }
 }
 </script>
