@@ -38,23 +38,6 @@
       "title": "儿童票"
     }, {
       "title": "特惠票"
-    }],
-    "comments": {
-      "hotComment": [{
-        "userid": "000001",
-        "userName": "mason舟",
-        "time": "2018-05-31",
-        "grade": 4,
-        "content": "取票方便，直接刷身份证就可以入园。取票方便，直接刷身份证就可以入园。取票方便，直接刷身份证就可以入园。而且相当便宜，现场买票要79，直接便宜了一半，太给力了。里面的游乐设施也很不错，就是人太多了，排队都排的老长了，我们五个小时只玩了四个项目，还是挺遗憾的。下次去试着避开周末了。",
-        "commentImgs": ["https://imgs.qunarzz.com/piao/fusion/1608/51/277593cef4751d02.jpg_228x168_0a9b9845.jpg","https://imgs.qunarzz.com/piao/fusion/1608/e0/b573db411f433302.jpg_228x168_f03c88dc.jpg", "https://imgs.qunarzz.com/piao/fusion/1608/a5/c276eac6067eca02.jpg_228x168_71a74064.jpg", "https://imgs.qunarzz.com/piao/fusion/1608/85/f1f96075bc989402.jpg_228x168_9f07e490.jpg", "https://imgs.qunarzz.com/piao/fusion/1608/41/9b685ea0889e2702.jpg_228x168_2f2a88a1.jpg", "https://imgs.qunarzz.com/piao/fusion/1608/d7/3c9cfb1b3a615602.jpg_228x168_6b2d60e5.jpg"]  
-        },{
-        "userid": "000002",
-        "userName": "欧阳",
-        "time": "2018-05-31",
-        "grade": 5,
-        "content": "取票方便，直接刷身份证就可以入园。而且相当便宜，现场买票要79，直接便宜了一半，太给力了。里面的游乐设施也很不错，就是人太多了，排队都排的老长了，我们五个小时只玩了四个项目，还是挺遗憾的。下次去试着避开周末了。",
-        "commentImgs": ["https://imgs.qunarzz.com/piao/fusion/1608/51/277593cef4751d02.jpg_228x168_0a9b9845.jpg","https://imgs.qunarzz.com/piao/fusion/1608/e0/b573db411f433302.jpg_228x168_f03c88dc.jpg", "https://imgs.qunarzz.com/piao/fusion/1608/a5/c276eac6067eca02.jpg_228x168_71a74064.jpg", "https://imgs.qunarzz.com/piao/fusion/1608/85/f1f96075bc989402.jpg_228x168_9f07e490.jpg", "https://imgs.qunarzz.com/piao/fusion/1608/41/9b685ea0889e2702.jpg_228x168_2f2a88a1.jpg", "https://imgs.qunarzz.com/piao/fusion/1608/d7/3c9cfb1b3a615602.jpg_228x168_6b2d60e5.jpg"]  
-        }]
-    }
+    }]
   }
 }

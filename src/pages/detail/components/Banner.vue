@@ -15,10 +15,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   name: 'detail-banner',
   props: {
-    listData: {
-      type: Array,
-      required: true
-    }
+    listData: Array
   },
   data () {
     return {

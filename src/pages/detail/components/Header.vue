@@ -12,7 +12,7 @@
       <img
         width="100%"
         :src="currentImg"
-        :alt="area_title"
+        :alt="areaTitle"
       >
 
       <div class="num-desc">
@@ -20,7 +20,7 @@
           <span class="iconfont">&#xe691;</span>
           <em>{{listDataLen}}</em>
         </div>
-        <div class="area-name">{{area_title}}</div>
+        <div class="area-name">{{areaTitle}}</div>
       </div>
     </div>
 
@@ -29,7 +29,7 @@
       <div @click.stop="toHome" tag="div" >
         <span class="iconfont">&#xe603;</span>
       </div>
-      <h3>{{$route.params.area_id}}</h3>
+      <h3>{{areaTitle}}</h3>
     </div>
   </div>
 </template>
@@ -42,7 +42,7 @@ export default {
       type: String,
       reqired: true
     },
-    area_title: String,
+    areaTitle: String,
     listDataLen: Number
   },
   data () {
@@ -50,8 +50,10 @@ export default {
       opacity: 0
     }
   },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll, false)
+  },
   activated () {
-    document.body.scrollTop = document.documentElement.scrollTop = 0
     window.addEventListener('scroll', this.handleScroll, false)
   },
   deactivated () {
@@ -65,6 +67,7 @@ export default {
       this.$router.push('/')
     },
     handleScroll () {
+      console.log(document.body.scrollTop || document.documentElement.scrollTop)
       const sTop = document.body.scrollTop || document.documentElement.scrollTop
       this.opacity = sTop < 50 ? 0 : (sTop >= 50 && sTop <= 140 ? sTop / 140 : 1)
     }

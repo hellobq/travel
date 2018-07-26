@@ -3,8 +3,8 @@
     <detail-header
       @reciveFlag="getFlag"
       :current-img="currentImg"
-      :area_title="$route.area_title"
-      :listDataLen="listData.length"
+      :area-title="$route.params.area_title"
+      :list-dataLen="listData.length"
     >
     </detail-header>
     <detail-banner
@@ -26,7 +26,6 @@ import axios from 'axios'
 export default {
   name: 'detail',
   created () {
-    console.log(this.$route.params.area_title)
     axios({
       type: 'get',
       url: 'api/detail.json',
@@ -61,8 +60,3 @@ export default {
   components: { DetailHeader, DetailBanner, DetailTicket }
 }
 </script>
-
-<style scoped lang="stylus">
-.detail
-  height: 20rem
-</style>

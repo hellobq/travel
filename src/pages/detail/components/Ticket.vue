@@ -16,10 +16,7 @@
 export default {
   name: 'detail-ticket',
   props: {
-    ticketList: {
-      type: Array,
-      required: true
-    }
+    ticketList: Array
   }
 }
 </script>
