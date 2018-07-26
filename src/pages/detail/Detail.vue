@@ -7,12 +7,15 @@
       :list-dataLen="listData.length"
     >
     </detail-header>
-    <detail-banner
-      @click.native="getFlag(false)"
-      v-show="flag"
-      :listData="listData"
-    >
-    </detail-banner>
+    <fade>
+      <detail-banner
+        @click.native="getFlag(false)"
+        v-show="flag"
+        :listData="listData"
+      >
+      </detail-banner>
+    </fade>
+
     <detail-ticket :ticketList="ticketList"></detail-ticket>
   </div>
 </template>
@@ -21,6 +24,7 @@
 import DetailHeader from './components/Header'
 import DetailBanner from './components/Banner'
 import DetailTicket from './components/Ticket'
+import Fade from './components/Fade'
 import axios from 'axios'
 
 export default {
@@ -55,8 +59,9 @@ export default {
   methods: {
     getFlag (bool) {
       this.flag = bool
+      console.log(bool)
     }
   },
-  components: { DetailHeader, DetailBanner, DetailTicket }
+  components: { DetailHeader, DetailBanner, DetailTicket, Fade }
 }
 </script>
