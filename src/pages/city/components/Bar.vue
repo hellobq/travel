@@ -6,7 +6,7 @@
       :key="index"
       :ref="item"
       @click="getCurrentChar"
-      @touchstart="handleStart"
+      @touchstart.prevent="handleStart"
       @touchmove="handleMove"
       @touchend="handleEnd"
     >

@@ -25,32 +25,46 @@ export default {
   name: 'Home',
   components: { HomeHeader, HomeSwiper, HomeIcons, HomeHot, HomeLove, HomeWeekend, HomeFooter },
   created () {
-    axios({
-      method: 'get',
-      url: '/api/index.json',
-      params: {
-        city: '上海' // 初始化应该是已定位的城市旅游资源
-      }
-    })
-      .then(req => {
-        const mydata = req.data.data
-        this.swiperList = mydata.swiperList
-        this.iconList = mydata.iconList
-        this.hotList = mydata.HotList
-        this.loveList = mydata.LoveList
-        this.weekendList = mydata.weekendList
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    console.log(this.$store.state.city)
+    this.lastCity = this.$store.state.city
+    this.getInfo()
   },
   data () {
     return {
+      lastCity: '',
       swiperList: [],
       iconList: [],
       hotList: [],
       loveList: [],
       weekendList: []
+    }
+  },
+  methods: {
+    getInfo () {
+      axios({
+        method: 'get',
+        url: '/api/index.json',
+        params: {
+          city: this.lastCity
+        }
+      })
+        .then(req => {
+          const mydata = req.data.data
+          this.swiperList = mydata.swiperList
+          this.iconList = mydata.iconList
+          this.hotList = mydata.HotList
+          this.loveList = mydata.LoveList
+          this.weekendList = mydata.weekendList
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+  },
+  activated () {
+    if (this.lastCity !== this.$store.state.city) {
+      this.lastCity = this.$store.state.city
+      this.getInfo()
     }
   }
 }
