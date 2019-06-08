@@ -1,13 +1,25 @@
 <template>
   <div id="app">
-    <keep-alive exclude="detail">
+    <!-- <keep-alive exclude="detail">
       <router-view/>
-    </keep-alive>
+    </keep-alive> -->
+    app
+    <test></test>
   </div>
 </template>
 
 <script>
+import test from './test'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    test
+  }
 }
 </script>
+
+<style scoped>
+div {
+  color: red;
+}
+</style>
