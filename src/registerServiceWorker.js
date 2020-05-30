@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'production') {
     },
     updated (registration) {
       console.log('New content is available; please refresh.')
-      console.log('registration ...', registration)
+      console.log('registration ...', registration, self)
       registration.update()
     },
     offline () {
