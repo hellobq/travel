@@ -46,10 +46,9 @@ export default {
     },
     onBodyPic() {
       window.location.href = `
-        mailto:bd@kachexiongdi.com?subject=程序猿1024&body=今天不加班
-        <div align="center">
-          <img src=https://upload.jianshu.io/users/upload_avatars/11210758/2c1c46c8-9f93-487b-96a7-43eacaccba12.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/80/h/80/format/webp />
-        </div>
+        mailto:bd@kachexiongdi.com?subject=程序猿1024&body=${
+          encodeURI(`今天不加班 今天不加班\n拜拜`)
+        }
       `
     }
   }
