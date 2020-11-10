@@ -1,5 +1,6 @@
 {
   "name": "ssr-nuxt-demo",
+  "comment": "pm2 启动 npm scripts: pm2 start npm --name nuxt-demo -- run start:dev",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,7 +10,7 @@
     "generate": "nuxt generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js",
-    "start:dev": "PORT=3000 nuxt start"
+    "start:dev": "npm run build && PORT=3000 nuxt start"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.0",
